@@ -2,7 +2,9 @@ package test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utilities.Driver;
 
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class _03_SeleniumNavigations {
@@ -23,10 +25,12 @@ public class _03_SeleniumNavigations {
          */
 
         //1.Set the driver
-        System.setProperty("wendriver.chrome.driver","/Users/atillafirat/IdeaProjects/selenium_intro/chromedriver");
+        /*
+        System.setProperty("webdriver.chrome.driver","/Users/atillafirat/IdeaProjects/selenium_intro/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);*/
+        WebDriver driver = Driver.getDriver();
 
         //2.validation
         driver.get("https://www.techglobalschool.com");
@@ -52,8 +56,10 @@ public class _03_SeleniumNavigations {
         else System.out.println("URl validation FAILED");
 
         //3.Quit driver
+        /*
         Thread.sleep(3000);
-        driver.quit();
+        driver.quit();*/
+        Driver.quitDriver();
 
     }
 }
